@@ -1,0 +1,22 @@
+.cart-item-div {
+  height: 20rem;
+  width: 60rem;
+  display: flex;
+  flex-direction: row;
+  background: white;
+  box-shadow: 2px 4px 25px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  overflow: hidden;
+  text-align: center;
+  border: 0.5px solid rgb(244, 244, 0);
+  margin-bottom: 2rem;
+}
+.cart-info-div {
+  margin: 0.5rem auto;
+}
+.cart-img {
+  display: block;
+  margin: 0.5rem auto;
+  max-width: 100%;
+  padding: 2rem;
+}

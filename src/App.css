@@ -1,0 +1,47 @@
+.img-div {
+  float: left;
+  height: 300px;
+  width: 280px;
+}
+
+.img {
+  display: block;
+  margin: 0.5rem auto;
+  max-width: 100%;
+  padding: 2rem;
+}
+.main-div {
+  display: flex;
+  flex-direction: row;
+  background: white;
+  box-shadow: 2px 4px 25px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  overflow: hidden;
+  text-align: center;
+  border: 0.5px solid rgb(244, 244, 0);
+}
+.info-div {
+  margin: 0.5rem auto;
+}
+.cart-btn {
+  position: fixed;
+  margin-left: 90rem;
+  margin-top: 35rem;
+  height: 50px;
+  width: 50px;
+  border-radius: 60%;
+  /* border: 00.5px solid brown; */
+  text-align: center;
+  border: none;
+}
+.cart-btn {
+  position: fixed;
+  margin-left: 88rem;
+  margin-top: 35rem;
+  height: 70px;
+  width: 70px;
+  border-radius: 60%;
+  /* border: 00.5px solid brown; */
+  text-align: center;
+  border: none;
+}
