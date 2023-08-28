@@ -24,6 +24,10 @@ function Cart(prop) {
                 <p>{product.description}</p>
                 <h4>Price : {product.price} $</h4>
               </div>
+
+              <button onClick={() => prop.removeCartItem(product.id)}>
+                Delete
+              </button>
             </div>
           );
         })}

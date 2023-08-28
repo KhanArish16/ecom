@@ -8,7 +8,9 @@ import Cart from "./Cart";
 function App() {
   const [data, setData] = useState([]);
   const [cart, setCart] = useState([]);
-  // console.log(data);
+  const [searchItem, setSearchItem] = useState("");
+  const [filterItem, setFilteredItem] = useState([]);
+  // console.log(searchItem);
 
   useEffect(() => {
     fetch("https://dummyjson.com/products")
@@ -16,11 +18,23 @@ function App() {
       .then((json) => setData(json.products));
   }, []);
 
+  useEffect(() => {
+    const filtered = data.filter((product) =>
+      product.title.toLowerCase().includes(searchItem)
+    );
+    setFilteredItem(filtered);
+  }, [searchItem, data]);
+
   const gettingCartData = (data) => {
     // console.log(data);
     setCart((prev) => [...prev, data]);
   };
-  console.log("cart", cart);
+  const removeCartItem = (itemId) => {
+    setCart((prev) => prev.filter((item) => item.id !== itemId));
+    console.log("workin ");
+  };
+
+  // console.log("cart", cart);
 
   return (
     <>
@@ -28,9 +42,18 @@ function App() {
         <Routes>
           <Route
             path="/"
-            element={<Product data={data} gettingCartData={gettingCartData} />}
+            element={
+              <Product
+                data={searchItem.length > 0 ? filterItem : data}
+                gettingCartData={gettingCartData}
+                setSearchItem={setSearchItem}
+              />
+            }
           />
-          <Route path="cart" element={<Cart cart={cart} />} />
+          <Route
+            path="cart"
+            element={<Cart cart={cart} removeCartItem={removeCartItem} />}
+          />
         </Routes>
       </BrowserRouter>
     </>

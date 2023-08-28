@@ -2,9 +2,15 @@ import React from "react";
 import { FaBeer, FaShoppingCart } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
-function Product({ data, gettingCartData }) {
+function Product({ data, gettingCartData, setSearchItem }) {
   return (
     <>
+      <input
+        type="text"
+        onChange={(e) => setSearchItem(e.target.value.toLowerCase())}
+      />
+      <br />
+
       <h3 className="cart-btn">
         <Link to="cart">
           <FaShoppingCart style={{ height: "50px", width: "50px" }} />
